@@ -1,0 +1,149 @@
+---
+documentclass: book
+classoption: oneside
+title: "Using the CNV information to identify molecular subtypes in pancreatic adenocarcinoma (PAAD)"
+author: |
+ | Qian Zhan, Chenlei Wen, Yi Zhao, Lu Fang, Yangbing Jin, Zehui Zhang, Siyi Zou, Fanlu Li, Ying Yang, Lijia Wu, Jiabin Jin, Xiongxiong Lu, Junjie Xie, Dongfeng Cheng, Zhiwei Xu, Jun Zhang, Jiancheng Wang, XiaXing Deng, Hao Chen, Chenghong Peng, Hongwei Li, Henghui Zhang, Hai Fang, Chaofu Wang, [Baiyong Shen](mailto:shenby@shsmu.edu.cn) 
+ | 
+ | Department of General Surgery, Pancreatic Disease Center, Research Institute of Pancreatic Diseases, Ruijin Hospital, Shanghai Jiao Tong University School of Medicine, 197 Ruijin Er Road, Shanghai, 200025, China
+vignette: >
+ %\VignetteIndexEntry{PAAD Booklet}
+ %\VignetteEngine{knitr::rmarkdown}
+ %\VignetteEncoding{UTF-8}
+output: 
+  BiocStyle::html_document:
+        toc: true
+        toc_depth: 3
+        number_sections: true
+        theme: journal
+        highlight: monochrome
+        toc_float: true
+        code_folding: hide
+---
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(collapse=TRUE, comment="##")
+knitr::opts_chunk$set(dpi=300)
+knitr::opts_chunk$set(cache=FALSE)
+knitr::opts_chunk$set(echo=TRUE)
+knitr::opts_chunk$set(warning=FALSE)
+knitr::opts_chunk$set(message=FALSE)
+knitr::opts_chunk$set(fig_cap="yes")
+knitr::opts_chunk$set(eval=F)
+```
+
+
+# Motivations {#index}
+
+> **Background**
+
+According to the cancer statistics, PAAD is one of the most aggressive and deadly cancers in China, with an estimate of 90,100 new cases and 79,400 new deaths. 
+
+The high rate of mortality indicates that prognosis becomes worse over time, lacking effective systematic therapies available for patients. 
+
+We recognize that the high mortality of PAAD in China can be traced back to the lack of comprehensive molecular subtyping (and prognostic models to evaluate risk levels of relapse). 
+
+The current histopathological classifications are of limited use to guide clinical decision-making, and there is an unmet need to identify new biomarkers for molecular subtyping in PAAD.
+
+
+```{r, eval=FALSE, echo=FALSE}
+cd ~/Sites/XGR/PAAD/BOOKLET
+################################################
+R
+library(tidyverse)
+
+## load
+load("now.PAAD_booklet.RData")
+
+## save
+save(list=ls(), file="now.PAAD_booklet.RData", compress="xz")
+
+## bookdown::render_book + bookdown::gitbook
+## use configuration in '_output.yml' and '_bookdown.yml'
+bookdown::render_book("now.PAAD_booklet.Rmd", c("bookdown::gitbook","bookdown::pdf_book","bookdown::tufte_html_book")[1])
+
+q('no')
+
+####################################################
+
+##########################
+https://23verse.github.io/PAAD
+##########################
+## bookdown::render_book + bookdown::gitbook
+cd ~/Sites/SVN/github/PAAD
+# delete previous *.html *.png *.css *.js *.ttf *.Rmd files *.yml files
+find ./ -type f -name '*.html' -o -type f -name '*.png' -o -type f -name '*.css' -o -type f -name '*.js' -o -type f -name '*.ttf' -o -type f -name '*.Rmd' -o -type f -name '*.yml' -o -type f -name '*.RDS' -o -type f -name '*.r' | xargs rm -rf
+############
+# copy the whole package from ~/Sites/XGR/PAAD/BOOKLET/PAAD2booklet to ~/Sites/SVN/github/PAAD
+cp -rf ~/Sites/XGR/PAAD/BOOKLET/PAAD2booklet/* ./
+# copy/rename ~/Sites/XGR/PAAD/BOOKLET/now.PAAD_booklet.Rmd to ~/Sites/SVN/github/PAAD/PAAD.Rmd
+cp -rf ~/Sites/XGR/PAAD/BOOKLET/now.PAAD_booklet.Rmd ./PAAD.Rmd
+cp -rf ~/Sites/XGR/PAAD/BOOKLET/_bookdown.yml ./_bookdown.yml
+cp -rf ~/Sites/XGR/PAAD/BOOKLET/_output.yml ./_output.yml
+# add new *.html *.png *.css *.js *.ttf *.Rmd *.yml files
+git status | grep 'modified' | awk '{print $2}' | xargs git add
+git status | grep 'deleted' | awk '{print $2}' | xargs git rm
+find ./ -type f -name '*.html' -o -type f -name '*.png' -o -type f -name '*.css' -o -type f -name '*.js' -o -type f -name '*.ttf' -o -type f -name '*.Rmd' -o -type f -name '*.yml' -o -type f -name '*.RDS' -o -type f -name '*.r' | xargs git add
+git add --all
+git commit -m 'Update PAAD'
+git push origin main
+##########################
+
+####################################################
+## GitHub Pages
+
+One site per account but unlimited projects can be created from https://pages.github.com:
+
+> **One site `https://github.com/23verse/23verse.github.io`**
+
+# visit https://github.com/new (enter "23verse.github.io" -> Initialize this repository with a README)
+# clone into the local machine 
+cd ~/Sites/SVN/github
+git clone git@github.com:23verse/23verse.github.io
+cd ~/Sites/SVN/github/23verse.github.io
+git pull origin master
+## https://github.com/23verse/23verse.github.io/settings/access: add "hfang-bristol"
+echo "Hello 23verse" > index.html
+git add --all
+git commit -m 'Initial commit'
+git push origin master
+# Alive (https://23verse.github.io)
+
+> **A project `https://github.com/23verse/PAAD`**
+
+# visit https://github.com/new (enter "PAAD" -> Initialize this repository with a README)
+## https://github.com/23verse/PAAD/settings/access: add "hfang-bristol"
+# clone into the local machine 
+cd ~/Sites/SVN/github
+git clone git@github.com:23verse/PAAD.git
+cd ~/Sites/SVN/github/PAAD
+git pull origin main
+echo "Hello PAAD" > index.html
+git add --all
+git commit -m 'Initial commit'
+git push origin main
+# visit https://github.com/23verse/PAAD/settings -> GitHub Pages (main/root)
+# Alive (https://23verse.github.io/PAAD): Molecular subtyping in PAAD
+####################################################
+
+```
+
+```{r, eval=F, echo=F}
+library(tidyverse)
+RData.location <- "~/Sites/XGR/PAAD/BOOKLET"
+```
+
+```{r, eval=F, echo=F}
+## PAAD_priority.txt.gz
+cp ~/Databases/grant_app/jobs/Oxford/Oxford_Wellcome_Trust_Centre_for_Human_Genetics/ULTRA-DD/MDPI/PAAD/PAAD_priority.txt.gz ~/Sites/XGR/PAAD/BOOKLET
+
+## PAAD_reactome.txt
+cp ~/Databases/grant_app/jobs/Oxford/Oxford_Wellcome_Trust_Centre_for_Human_Genetics/ULTRA-DD/MDPI/PAAD/PAAD_reactome.txt ~/Sites/XGR/PAAD/BOOKLET
+
+## PAAD_subg_nodes.txt
+cp ~/Databases/grant_app/jobs/Oxford/Oxford_Wellcome_Trust_Centre_for_Human_Genetics/ULTRA-DD/MDPI/PAAD/PAAD_subg_nodes.txt ~/Sites/XGR/PAAD/BOOKLET
+
+## Crosstalk.approved_phased.txt
+cp ~/Databases/grant_app/jobs/Oxford/Oxford_Wellcome_Trust_Centre_for_Human_Genetics/ULTRA-DD/MDPI/PAAD/Crosstalk.approved_phased.txt ~/Sites/XGR/PAAD/BOOKLET
+
+```
