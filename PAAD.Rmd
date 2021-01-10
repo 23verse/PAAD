@@ -58,9 +58,9 @@ The current stratification for PAAD patients is mainly based on:
 
 - We construct a **[prognostic model]** incorporating the information on CNV of DNA repair and RTK related genes, and illustrate the use of the constructed model in distinguishing patients with high and low risk of relapse. 
 
-- We reinforce the prognostic value of our identified genes in DNA repair and RTK related signaling pathways by analyzing the **[TCGA cohort]**.
+- We reinforce the prognostic value of our identified genes in DNA repair and RTK related signaling pathways by analyzing PAAD patients from the **[TCGA cohort]**.
 
-- We suggest the **[treatment management]**: repair-deficient and proliferation-active subtypes are better suited for DNA damage therapies, while immunotherapy highly recommended for repair-proficient and repair-enhanced subtypes.
+- We suggest the **[treatment management]** for PAAD patients: repair-deficient and proliferation-active subtypes are better suited for DNA damage therapies, while immunotherapy highly recommended for repair-proficient and repair-enhanced subtypes.
 
 ```{r, eval=FALSE, echo=FALSE}
 cd ~/Sites/XGR/PAAD/BOOKLET
