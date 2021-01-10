@@ -55,11 +55,11 @@ The current stratification for PAAD patients is mainly based on:
 
 - Using the copy number variations (CNV) information of genes involved in DNA repair and RTK related signaling pathways, we are able to stratify patients into four **[molecular subtypes]** (namely, `repair-deficient`, `proliferation-active`, `repair-proficient` and `repair-enhanced` subtypes) that differ in prognosis. 
 
-- We show that repair-deficient and proliferation-active subtypes are better suited for DNA damage therapies, while immunotherapy highly recommended for repair-proficient and repair-enhanced subtypes. 
-
 - We construct a prognostic model incorporating the information on CNV of DNA repair and RTK related genes, and illustrate the use of the constructed model in distinguishing patients with high and low risk of relapse. 
 
 - We reinforce the prognostic value of our identified genes in DNA repair and RTK related signaling pathways by analyzing publicly available datasets.
+
+- We suggest that repair-deficient and proliferation-active subtypes are better suited for DNA damage therapies, while immunotherapy highly recommended for repair-proficient and repair-enhanced subtypes.
 
 ```{r, eval=FALSE, echo=FALSE}
 cd ~/Sites/XGR/PAAD/BOOKLET
@@ -201,7 +201,7 @@ Collectively considering the information obtained from unsupervised clustering a
 
 - `repair-enhanced` (the repair-proficient group with high CNV score; notably lacking the survival information for prognostic analysis)
 
-**Our identified subtypes were informative in prognosis (as shown in the figure): the best prognosis for repair-deficient patients, and the worse for repair-proficient and proliferation-active patients.**
+**Our identified subtypes were informative in prognosis (as shown in the figure): the best for repair-deficient patients, and the worse for repair-proficient and proliferation-active patients.**
 
 ```{r subtype, fig.cap="", fig.width=10, fig.height=3, echo=FALSE, eval=T, fig.align="center",out.width="100%"}
 library(png)
