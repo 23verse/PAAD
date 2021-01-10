@@ -51,7 +51,7 @@ The current stratification for PAAD patients is mainly based on:
 
 - We report the **[mutational landscape]** of 608 PAAD patients, the largest cohort ever  in China, generating the most comprehensive resource on genetic alternations (covering somatic mutations, pathogenic germline variants, copy number variations, and well-known genomic markers, such as tumor mutational burden, copy number instability and somatic signatures). Based on the information of point mutations in either HRR genes or highly mutated genes, as mentioned above ([What has known in literature]), we find no associations with prognosis. 
 
-- We are the first to report that the poor prognosis is associated with amplification of genes involved in DNA repair and receptor tyrosine kinase (RTK) related signaling pathways, supporting the clinical link between **[CNV and prognosis]** in PAAD.
+- We are the first to report that the poor prognosis is associated with amplification of genes involved in DNA repair and receptor tyrosine kinase (RTK) related signaling pathways, establishing the clinical link between **[CNV and prognosis]** in PAAD.
 
 - Using the information of copy number variations (CNV), we are able to stratify patients into four molecular subtypes (namely, `repair-deficient`, `proliferation-active`, `repair-proficient` and `repair-enhanced` subtypes) that differ in prognosis. 
 
