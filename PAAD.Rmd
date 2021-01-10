@@ -193,7 +193,7 @@ Given the fact that patients in CNV-G1 (repair-deficient) formed a large group i
 
 Collectively considering the information obtained from unsupervised clustering and CNV-based stratification, we were able to categorize PAAD patients into four molecular subtypes: 
 
-- `repair-deficient` (derived from the repair-deficient group with low CNV score)
+- `repair-deficient` (the repair-deficient group with low CNV score)
 
 - `proliferation-active` (the repair-deficient group with high CNV score)
 
