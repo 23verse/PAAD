@@ -33,18 +33,33 @@ knitr::opts_chunk$set(eval=F)
 ```
 
 
-# Motivations {#index}
+# Overview {#index}
 
-> **Background**
+## Motivation
 
-According to the cancer statistics, PAAD is one of the most aggressive and deadly cancers in China, with an estimate of 90,100 new cases and 79,400 new deaths. 
+According to [cancer statistics in China, 2015](https://pubmed.ncbi.nlm.nih.gov/26808342), PAAD is one of the most aggressive and deadly cancers in China, with an estimate of 90,100 new cases and 79,400 new deaths. We recognize that the high mortality of PAAD in China can be traced back to the lack of comprehensive molecular subtyping (and prognostic models to evaluate risk levels of relapse). We also realize that the current histopathological classifications for PAAD are of limited use to guide clinical decision-making. Therefore, there is an unmet need to identify new biomarkers for molecular subtyping in PAAD.
 
-The high rate of mortality indicates that prognosis becomes worse over time, lacking effective systematic therapies available for patients. 
+## What has known in literature
 
-We recognize that the high mortality of PAAD in China can be traced back to the lack of comprehensive molecular subtyping (and prognostic models to evaluate risk levels of relapse). 
+The current stratification for PAAD patients is mainly based on: 
 
-The current histopathological classifications are of limited use to guide clinical decision-making, and there is an unmet need to identify new biomarkers for molecular subtyping in PAAD.
+- the mutation profiles of genes, including homologous recombination repair (HRR) genes (see [paper](https://pubmed.ncbi.nlm.nih.gov/32855305)), and highly mutated genes (such as KRAS, TP53, CDKN2A and SMAD4; see [paper](https://pubmed.ncbi.nlm.nih.gov/30836094)); and
 
+- the RNA-seq expression data to estimate immune cytolytic activity (see [paper](https://pubmed.ncbi.nlm.nih.gov/28007776)).
+
+## What has done this study
+
+- We report the **[mutational landscape]** of 608 PAAD patients, the largest cohort ever  in China, generating the most comprehensive resource on genetic alternations (covering somatic mutations, pathogenic germline variants, copy number variations, and well-known genomic markers, such as tumor mutational burden, copy number instability and somatic signatures). Based on the information of point mutations in either HRR genes or highly mutated genes, as mentioned above ([What has known in literature]), we find no associations with prognosis. 
+
+- We are the first to report that the poor prognosis is associated with amplification of genes involved in DNA repair and receptor tyrosine kinase (RTK) related signaling pathways.
+
+- Using the information of copy number variations (CNV), we are able to stratify patients into four molecular subtypes (namely, `repair-deficient`, `proliferation-active`, `repair-proficient` and `repair-enhanced` subtypes) that differ in prognosis. 
+
+- We show that repair-deficient and proliferation-active subtypes are better suited for DNA damage therapies, while immunotherapy highly recommended for repair-proficient and repair-enhanced subtypes. 
+
+- We construct a prognostic model incorporating the information on CNV of DNA repair and RTK related genes, and illustrate the use of the constructed model in distinguishing patients with high and low risk of relapse. 
+
+- We reinforce the prognostic value of our identified genes in DNA repair and RTK related signaling pathways by analyzing publicly available datasets.
 
 ```{r, eval=FALSE, echo=FALSE}
 cd ~/Sites/XGR/PAAD/BOOKLET
@@ -146,4 +161,16 @@ cp ~/Databases/grant_app/jobs/Oxford/Oxford_Wellcome_Trust_Centre_for_Human_Gene
 ## Crosstalk.approved_phased.txt
 cp ~/Databases/grant_app/jobs/Oxford/Oxford_Wellcome_Trust_Centre_for_Human_Genetics/ULTRA-DD/MDPI/PAAD/Crosstalk.approved_phased.txt ~/Sites/XGR/PAAD/BOOKLET
 
+```
+
+
+# Mutational landscape
+
+We carried out a cohort study involving 608 PAAD patients in China and, for each patient, profiled genetic alterations including somatic mutations, pathogenic germline variants and CNV along with several genomic markers, such as tumor mutational burden (TMB), copy number instability (CNI) and somatic signatures. From this Chinese cohort we identified a list of frequently mutated genes, with the top 30 illustrated below. 
+
+```{r pathway, fig.cap="", fig.width=7.5, fig.height=3, echo=FALSE, eval=T, fig.align="center",out.width="100%"}
+library(png)
+library(grid)
+img <- readPNG("booklet.PAAD.landscape.png")
+grid.raster(img)
 ```
