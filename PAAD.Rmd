@@ -53,7 +53,7 @@ The current stratification for PAAD patients is mainly based on:
 
 - We are the first to report that the poor prognosis is associated with amplification of genes involved in DNA repair and receptor tyrosine kinase (RTK) related signaling pathways, establishing the clinical link between **[CNV and prognosis]** in PAAD.
 
-- Using the information of copy number variations (CNV), we are able to stratify patients into four molecular subtypes (namely, `repair-deficient`, `proliferation-active`, `repair-proficient` and `repair-enhanced` subtypes) that differ in prognosis. 
+- Using the copy number variations (CNV) information of genes involved in DNA repair and RTK related signaling pathways, we are able to stratify patients into four **[molecular subtypes]** (namely, `repair-deficient`, `proliferation-active`, `repair-proficient` and `repair-enhanced` subtypes) that differ in prognosis. 
 
 - We show that repair-deficient and proliferation-active subtypes are better suited for DNA damage therapies, while immunotherapy highly recommended for repair-proficient and repair-enhanced subtypes. 
 
@@ -187,3 +187,25 @@ grid.raster(img)
 ```
 
 Given the fact that patients in CNV-G1 (repair-deficient) formed a large group in number, we partitioned these patients into two subgroups: one subgroup with high CNV score, and the other subgroup with low CNV score. Comparing repair-deficient patients with high or low CNV score, we identified 203 genes with differential CNV. Genes with higher CNV (in the patient subgroup with higher CNV score) were largely involved in the RTK related signaling pathways. **As shown in the right panel of the figure above, worse prognosis was significantly associated with `the subgroup with high CNV score` as compared to `the subgroup with low CNV score`.**
+
+
+# Molecular subtypes
+
+Collectively considering the information obtained from unsupervised clustering and CNV-based stratification, we were able to categorize PAAD patients into four molecular subtypes: 
+
+- `repair-deficient` (derived from the repair-deficient group with low CNV score)
+
+- `proliferation-active` (the repair-deficient group with high CNV score)
+
+- `repair-proficient` (the repair-proficient group with low CNV score)
+
+- `repair-enhanced` (the repair-proficient group with high CNV score; notably lacking the survival information for prognostic analysis)
+
+**Our identified subtypes were informative in prognosis (as shown in the figure): the best prognosis for repair-deficient patients, and the worse for repair-proficient and proliferation-active patients.**
+
+```{r subtype, fig.cap="", fig.width=10, fig.height=3, echo=FALSE, eval=T, fig.align="center",out.width="100%"}
+library(png)
+library(grid)
+img <- readPNG("booklet.PAAD.subtype.png")
+grid.raster(img)
+```

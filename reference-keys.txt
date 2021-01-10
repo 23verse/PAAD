@@ -4,3 +4,4 @@ what-has-known-in-literature
 what-has-done-this-study
 mutational-landscape
 cnv-and-prognosis
+molecular-subtypes
