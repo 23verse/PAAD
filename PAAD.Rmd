@@ -6,6 +6,7 @@ author: |
  | Qian Zhan, Chenlei Wen, Yi Zhao, Lu Fang, Yangbing Jin, Zehui Zhang, Siyi Zou, Fanlu Li, Ying Yang, Lijia Wu, Jiabin Jin, Xiongxiong Lu, Junjie Xie, Dongfeng Cheng, Zhiwei Xu, Jun Zhang, Jiancheng Wang, XiaXing Deng, Hao Chen, Chenghong Peng, Hongwei Li, Henghui Zhang, Hai Fang, Chaofu Wang, [Baiyong Shen](mailto:shenby@shsmu.edu.cn) 
  | 
  | Department of General Surgery, Pancreatic Disease Center, Research Institute of Pancreatic Diseases, Ruijin Hospital, Shanghai Jiao Tong University School of Medicine, 197 Ruijin Er Road, Shanghai, 200025, China
+date: "`r Sys.Date()`"
 vignette: >
  %\VignetteIndexEntry{PAAD Booklet}
  %\VignetteEngine{knitr::rmarkdown}
@@ -55,11 +56,11 @@ The current stratification for PAAD patients is mainly based on:
 
 - Using the copy number variations (CNV) information of genes involved in DNA repair and RTK related signaling pathways, we are able to stratify patients into four **[molecular subtypes]** (namely, `repair-deficient`, `proliferation-active`, `repair-proficient` and `repair-enhanced` subtypes) that differ in prognosis. 
 
-- We construct a prognostic model incorporating the information on CNV of DNA repair and RTK related genes, and illustrate the use of the constructed model in distinguishing patients with high and low risk of relapse. 
+- We construct a **[prognostic model]** incorporating the information on CNV of DNA repair and RTK related genes, and illustrate the use of the constructed model in distinguishing patients with high and low risk of relapse. 
 
-- We reinforce the prognostic value of our identified genes in DNA repair and RTK related signaling pathways by analyzing publicly available datasets.
+- We reinforce the prognostic value of our identified genes in DNA repair and RTK related signaling pathways by analyzing the **[TCGA cohort]**.
 
-- We suggest that repair-deficient and proliferation-active subtypes are better suited for DNA damage therapies, while immunotherapy highly recommended for repair-proficient and repair-enhanced subtypes.
+- We suggest the **[treatment management]**: repair-deficient and proliferation-active subtypes are better suited for DNA damage therapies, while immunotherapy highly recommended for repair-proficient and repair-enhanced subtypes.
 
 ```{r, eval=FALSE, echo=FALSE}
 cd ~/Sites/XGR/PAAD/BOOKLET
@@ -209,3 +210,9 @@ library(grid)
 img <- readPNG("booklet.PAAD.subtype.png")
 grid.raster(img)
 ```
+
+# Prognostic model
+
+# TCGA cohort
+
+# Treatment management

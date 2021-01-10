@@ -5,3 +5,6 @@ what-has-done-this-study
 mutational-landscape
 cnv-and-prognosis
 molecular-subtypes
+prognostic-model
+tcga-cohort
+treatment-management
