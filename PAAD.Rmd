@@ -51,7 +51,7 @@ The current stratification for PAAD patients is mainly based on:
 
 - We report the **[mutational landscape]** of 608 PAAD patients, the largest cohort ever  in China, generating the most comprehensive resource on genetic alternations (covering somatic mutations, pathogenic germline variants, copy number variations, and well-known genomic markers, such as tumor mutational burden, copy number instability and somatic signatures). Based on the information of point mutations in either HRR genes or highly mutated genes, as mentioned above ([What has known in literature]), we find no associations with prognosis. 
 
-- We are the first to report that the poor prognosis is associated with amplification of genes involved in DNA repair and receptor tyrosine kinase (RTK) related signaling pathways.
+- We are the first to report that the poor prognosis is associated with amplification of genes involved in DNA repair and receptor tyrosine kinase (RTK) related signaling pathways, supporting the clinical link between **[CNV and prognosis]** in PAAD.
 
 - Using the information of copy number variations (CNV), we are able to stratify patients into four molecular subtypes (namely, `repair-deficient`, `proliferation-active`, `repair-proficient` and `repair-enhanced` subtypes) that differ in prognosis. 
 
@@ -166,11 +166,24 @@ cp ~/Databases/grant_app/jobs/Oxford/Oxford_Wellcome_Trust_Centre_for_Human_Gene
 
 # Mutational landscape
 
-We carried out a cohort study involving 608 PAAD patients in China and, for each patient, profiled genetic alterations including somatic mutations, pathogenic germline variants and CNV along with several genomic markers, such as tumor mutational burden (TMB), copy number instability (CNI) and somatic signatures. From this Chinese cohort we identified a list of frequently mutated genes, with the top 30 illustrated below. 
+We carried out a cohort study involving 608 PAAD patients in China and, for each patient, profiled genetic alterations including somatic mutations, pathogenic germline variants and CNV along with several genomic markers, such as tumor mutational burden (TMB), copy number instability (CNI) and somatic signatures. **From this Chinese cohort we identified a list of frequently mutated genes, with the top 30 illustrated below.**
 
-```{r pathway, fig.cap="", fig.width=7.5, fig.height=3, echo=FALSE, eval=T, fig.align="center",out.width="100%"}
+```{r landscape, fig.cap="", fig.width=7.5, fig.height=3, echo=FALSE, eval=T, fig.align="center",out.width="100%"}
 library(png)
 library(grid)
 img <- readPNG("booklet.PAAD.landscape.png")
 grid.raster(img)
 ```
+
+# CNV and prognosis
+
+We classified 608 PAAD patients into two groups according to CNV: the first group (CNV-G1 with 321 patients) versus the second group (CNV-G2 with 287 patients). We performed differential CNV analysis identifying 115 genes with higher CNV in CNV-G1 than in CNV-G2, and 255 genes with higher CNV in CNV-G2. These 255 genes with higher CNV in CNV-G2 are mostly of functional relevance to DNA repair, including 11 HRR genes (ATM, ATR, BLM, BRCA1/2, BRIP1, CHEK2, PALB2 and RAD51B/51C/51D). These analyses reveal that CNV-G2 patients seemed to obtain an enhanced function of DNA repair (likely HRR), while CNV-G1 patients possessed more depleted DNA repair genes. For convenience, we renamed CNV-G2 as 'repair-proficient', and CNV-G1 as 'repair-deficient'. **As shown in the left panel of the figure below, `patients in CNV-G2 (repair-proficient)` had a worse prognosis than `patients in CNV-G1 (repair-deficient)`.**
+
+```{r prognosis, fig.cap="", fig.width=11.8, fig.height=3, echo=FALSE, eval=T, fig.align="center",out.width="100%"}
+library(png)
+library(grid)
+img <- readPNG("booklet.PAAD.prognosis.png")
+grid.raster(img)
+```
+
+Given the fact that patients in CNV-G1 (repair-deficient) formed a large group in number, we partitioned these patients into two subgroups: one subgroup with high CNV score, and the other subgroup with low CNV score. Comparing repair-deficient patients with high or low CNV score, we identified 203 genes with differential CNV. Genes with higher CNV (in the patient subgroup with higher CNV score) were largely involved in the RTK related signaling pathways. **As shown in the right panel of the figure above, worse prognosis was significantly associated with `the subgroup with high CNV score` rather than `the subgroup with low CNV score`.**
