@@ -228,7 +228,7 @@ We attempted to construct a prognostic model that is clinically actionable using
 
 - the constructed model used to calculate risk score for each patient;
 
-- patients stratified into two groups with high and low risk score maximizing the DFS-based rank statistics.
+- patients stratified into two groups with high- and low-risk score maximizing the DFS-based rank statistics.
 
 
 ```{r test, fig.cap="", fig.width=3.3, fig.height=3, echo=FALSE, eval=T, fig.align="center",out.width="50%"}
