@@ -6,4 +6,3 @@ mutational-landscape
 cnv-and-prognosis
 molecular-subtypes
 prognostic-model
-treatment-management
