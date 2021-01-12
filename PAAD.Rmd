@@ -187,7 +187,23 @@ grid.raster(img)
 
 # CNV and prognosis
 
-We classified 608 PAAD patients into two groups according to CNV: the first group (CNV-G1 with 321 patients) versus the second group (CNV-G2 with 287 patients). We performed differential CNV analysis identifying 115 genes with higher CNV in CNV-G1 than in CNV-G2, and 255 genes with higher CNV in CNV-G2. These 255 genes with higher CNV in CNV-G2 are mostly of functional relevance to DNA repair, including 11 HRR genes (ATM, ATR, BLM, BRCA1/2, BRIP1, CHEK2, PALB2 and RAD51B/51C/51D). These analyses reveal that CNV-G2 patients seemed to obtain an enhanced function of DNA repair (likely HRR), while CNV-G1 patients possessed more depleted DNA repair genes. For convenience, we renamed CNV-G2 as 'repair-proficient', and CNV-G1 as 'repair-deficient'. **As shown in the left panel of the figure below, `patients in CNV-G2 (repair-proficient)` had a worse prognosis than `patients in CNV-G1 (repair-deficient)`.**
+## Differential CNV
+
+We classified 608 PAAD patients into two groups according to CNV: the first group (CNV-G1 with 321 patients) versus the second group (CNV-G2 with 287 patients). We performed differential CNV analysis identifying 155 genes with higher CNV in CNV-G1 than in CNV-G2, and 215 genes with higher CNV in CNV-G2. These 215 genes with higher CNV in CNV-G2 are mostly of functional relevance to DNA repair, including 11 HRR genes (ATM, ATR, BLM, BRCA1/2, BRIP1, CHEK2, PALB2 and RAD51B/51C/51D). These analyses reveal that CNV-G2 patients seemed to obtain an enhanced function of DNA repair (likely HRR), while CNV-G1 patients possessed more depleted DNA repair genes. For convenience, we renamed CNV-G2 as 'repair-proficient', and CNV-G1 as 'repair-deficient'. 
+
++
+> 
+> **List of genes with differential CNV comparing CNV-G1 against in CNV-G2**, with the column `log(G1 / G2)` indicative of log-transformed differential change.
+> 
+
+```{r, echo=FALSE, eval=T}
+read_delim("CNV.txt", delim="\t") %>% arrange(-Ratio) %>% transmute(Gene=sprintf("<a href='http://www.genecards.org/cgi-bin/carddisp.pl?gene=%s' target='%s''>%s</a>",gene,gene,gene), 'log(G1 / G2)'=signif(Ratio,digits=3), FDR=signif(FDR,digits=3), Status=ifelse(`CNV-G1`>`CNV-G2`, 'Higher in CNV-G1', 'Higher in CNV-G2')) %>% DT::datatable(options=list(pageLength=10,searchHighlight=T,dom='Bfrtip',buttons=c('csv','copy'), dom='t',scrollX=T), style='default', caption="", rownames=FALSE, escape=F, extensions=c('Buttons'))
+```
+
+
+## Prognosis
+
+**As shown in the left panel of the figure below, `patients in CNV-G2 (repair-proficient)` had a worse prognosis than `patients in CNV-G1 (repair-deficient)`.**
 
 ```{r prognosis, fig.cap="", fig.width=11.8, fig.height=3, echo=FALSE, eval=T, fig.align="center",out.width="100%"}
 library(png)
@@ -200,6 +216,8 @@ Given the fact that patients in CNV-G1 (repair-deficient) formed a large group i
 
 
 # Molecular subtypes
+
+## Subtypes and prognosis
 
 Collectively considering the information obtained from unsupervised clustering and CNV-based stratification, we were able to categorize PAAD patients into four molecular subtypes: 
 
@@ -220,7 +238,22 @@ img <- readPNG("booklet.PAAD.subtype.png")
 grid.raster(img)
 ```
 
+## Repair-deficient patients
+
+Comparing repair-deficient patients with high or low CNV score, we identified 203 genes with differential CNV (FDR < 0.05 on Wilcoxon rank sum test).
+
++
+> 
+> **List of genes with differential CNV comparing repair-deficient patients with high CNV score (`CNVscoreH`) against repair-deficient patients with low CNV score (`CNVscoreL`)**, with the column `log(CNVscoreH / CNVscoreL)` indicative of log-transformed differential change.
+> 
+
+```{r, echo=FALSE, eval=T}
+read_delim("G1_CNVscore.txt", delim="\t") %>% arrange(-Ratio) %>% transmute(Gene=sprintf("<a href='http://www.genecards.org/cgi-bin/carddisp.pl?gene=%s' target='%s''>%s</a>",gene,gene,gene), 'log(CNVscoreH / CNVscoreL)'=signif(Ratio,digits=3), FDR=signif(FDR,digits=3)) %>% DT::datatable(options=list(pageLength=20,searchHighlight=T,dom='Bfrtip',buttons=c('csv','copy'), dom='t',scrollX=T), style='default', caption="", rownames=FALSE, escape=F, extensions=c('Buttons'))
+```
+
 # Prognostic model
+
+## Training
 
 ```{r train, fig.cap="", fig.width=9.8, fig.height=3, echo=FALSE, eval=T, fig.align="center",out.width="100%"}
 library(png)
@@ -239,6 +272,8 @@ We attempted to construct a prognostic model that is clinically actionable using
 
 - patients stratified into two groups with high- and low-risk score maximizing the DFS-based rank statistics.
 
+
+## Testing
 
 ```{r test, fig.cap="", fig.width=3.3, fig.height=3, echo=FALSE, eval=T, fig.align="center",out.width="50%"}
 library(png)

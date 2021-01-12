@@ -5,6 +5,8 @@ bookdown::gitbook:
     toc:
       before: |
         <li><a href="./index.html">PAAD</a></li>
+      after: |
+        <li>Email: shenby@shsmu.edu.cn</li>
       collapse: subsection
       scroll_highlight: yes
     toolbar:
