@@ -285,4 +285,4 @@ grid.raster(img)
 
 # Code availability
 
-The code used for CNV score calculation is available [here](https://github.com/corefacilitygenecast/FACTORscore).
+Codes used for CNV score calculation are available [here](https://github.com/corefacilitygenecast/FACTORscore).
