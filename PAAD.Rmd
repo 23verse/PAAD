@@ -282,3 +282,7 @@ grid.raster(img)
 
 **The constructed model performed well for patients in the testing set that were not considered during the model construction: patients with high-risk score had significantly worse prognosis than those with low-risk score.**
 
+
+# Code availability
+
+The code used for CNV score calculation is available [here](https://github.com/corefacilitygenecast/FACTORscore).

@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Section 5 Prognostic model | Using the CNV information to identify molecular subtypes in pancreatic adenocarcinoma (PAAD)</title>
-  <meta name="description" content="Section 5 Prognostic model | Using the CNV information to identify molecular subtypes in pancreatic adenocarcinoma (PAAD)" />
+  <title>Section 6 Code availability | Using the CNV information to identify molecular subtypes in pancreatic adenocarcinoma (PAAD)</title>
+  <meta name="description" content="Section 6 Code availability | Using the CNV information to identify molecular subtypes in pancreatic adenocarcinoma (PAAD)" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Section 5 Prognostic model | Using the CNV information to identify molecular subtypes in pancreatic adenocarcinoma (PAAD)" />
+  <meta property="og:title" content="Section 6 Code availability | Using the CNV information to identify molecular subtypes in pancreatic adenocarcinoma (PAAD)" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Section 5 Prognostic model | Using the CNV information to identify molecular subtypes in pancreatic adenocarcinoma (PAAD)" />
+  <meta name="twitter:title" content="Section 6 Code availability | Using the CNV information to identify molecular subtypes in pancreatic adenocarcinoma (PAAD)" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="molecular-subtypes.html"/>
-<link rel="next" href="code-availability.html"/>
+<link rel="prev" href="prognostic-model.html"/>
+
 <script src="libs/jquery-3.5.1/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -123,32 +123,18 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="prognostic-model" class="section level1">
-<h1><span class="header-section-number">Section 5</span> Prognostic model</h1>
-<div id="training" class="section level2">
-<h2><span class="header-section-number">5.1</span> Training</h2>
-<p><img src="PAAD_files/figure-html/train-1.png" width="100%" style="display: block; margin: auto;" /></p>
-<p>We attempted to construct a prognostic model that is clinically actionable using the CNV information of genes involved in DNA repair and RTK related signaling pathways:</p>
-<ul>
-<li><p>patients split into the training and testing sets;</p></li>
-<li><p>the elastic net algorithm applied to the training set to construct a prognostic model consisting of RAD50 (involved in the HRR pathway), ABL1 (DNA repair), and 3 RTK related genes (JAK2, AKT1 and CSF1R);</p></li>
-<li><p>the constructed model used to calculate risk score for each patient;</p></li>
-<li><p>patients stratified into two groups with high- and low-risk score maximizing the DFS-based rank statistics.</p></li>
-</ul>
-</div>
-<div id="testing" class="section level2">
-<h2><span class="header-section-number">5.2</span> Testing</h2>
-<p><img src="PAAD_files/figure-html/test-1.png" width="50%" style="display: block; margin: auto;" /></p>
-<p><strong>The constructed model performed well for patients in the testing set that were not considered during the model construction: patients with high-risk score had significantly worse prognosis than those with low-risk score.</strong></p>
-</div>
+<div id="code-availability" class="section level1">
+<h1><span class="header-section-number">Section 6</span> Code availability</h1>
+<p>The code used for CNV score calculation is available <a href="https://github.com/corefacilitygenecast/FACTORscore">here</a>.</p>
+
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="molecular-subtypes.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="code-availability.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="prognostic-model.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
