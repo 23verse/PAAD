@@ -56,8 +56,6 @@ The current stratification for PAAD patients is mainly based on:
 
 - Using the copy number variations (CNV) information of genes involved in DNA repair and RTK related signaling pathways, we are able to stratify patients into four **[molecular subtypes]** (namely, `repair-deficient`, `proliferation-active`, `repair-proficient` and `repair-enhanced` subtypes) that differ in prognosis. 
 
-- We construct a **[prognostic model]** incorporating the information on CNV of DNA repair and RTK related genes, and illustrate the use of the constructed model in distinguishing patients with high and low risk of relapse. 
-
 - We suggest the treatment management for PAAD patients (see **the figure** below): repair-deficient and proliferation-active subtypes are better suited for DNA damage therapies, while immunotherapy highly recommended for repair-proficient and repair-enhanced subtypes.
 
 
@@ -248,39 +246,6 @@ Comparing repair-deficient patients with high or low CNV score, we identified 20
 ```{r, echo=FALSE, eval=T}
 read_delim("G1_CNVscore.txt", delim="\t") %>% arrange(-Ratio) %>% transmute(Gene=sprintf("<a href='http://www.genecards.org/cgi-bin/carddisp.pl?gene=%s' target='%s''>%s</a>",gene,gene,gene), 'log(CNVscoreH / CNVscoreL)'=signif(Ratio,digits=3), FDR=signif(FDR,digits=3)) %>% DT::datatable(options=list(pageLength=20,searchHighlight=T,dom='Bfrtip',buttons=c('csv','copy'), dom='t',scrollX=T), style='default', caption="", rownames=FALSE, escape=F, extensions=c('Buttons'))
 ```
-
-# Prognostic model
-
-## Training
-
-```{r train, fig.cap="", fig.width=9.8, fig.height=3, echo=FALSE, eval=T, fig.align="center",out.width="100%"}
-library(png)
-library(grid)
-img <- readPNG("booklet.PAAD.train.png")
-grid.raster(img)
-```
-
-We attempted to construct a prognostic model that is clinically actionable using the CNV information of genes involved in DNA repair and RTK related signaling pathways: 
-
-- patients split into the training and testing sets;
-
-- the elastic net algorithm applied to the training set to construct a prognostic model consisting of RAD50 (involved in the HRR pathway), ABL1 (DNA repair), and 3 RTK related genes (JAK2, AKT1 and CSF1R);
-
-- the constructed model used to calculate risk score for each patient;
-
-- patients stratified into two groups with high- and low-risk score maximizing the DFS-based rank statistics.
-
-
-## Testing
-
-```{r test, fig.cap="", fig.width=3.3, fig.height=3, echo=FALSE, eval=T, fig.align="center",out.width="50%"}
-library(png)
-library(grid)
-img <- readPNG("booklet.PAAD.test.png")
-grid.raster(img)
-```
-
-**The constructed model performed well for patients in the testing set that were not considered during the model construction: patients with high-risk score had significantly worse prognosis than those with low-risk score.**
 
 
 # Code availability

@@ -9,7 +9,4 @@ prognosis
 molecular-subtypes
 subtypes-and-prognosis
 repair-deficient-patients
-prognostic-model
-training
-testing
 code-availability
