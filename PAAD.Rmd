@@ -1,11 +1,11 @@
 ---
 documentclass: book
 classoption: oneside
-title: "Using the CNV information to identify molecular subtypes in pancreatic adenocarcinoma (PAAD)"
+title: "Using the CNV information to identify molecular subtypes informative for prognosis and treatment in pancreatic adenocarcinoma (PAAD) of a Chinese cohort"
 author: |
- | Qian Zhan, Chenlei Wen, Yi Zhao, Lu Fang, Yangbing Jin, Zehui Zhang, Siyi Zou, Fanlu Li, Ying Yang, Lijia Wu, Jiabin Jin, Xiongxiong Lu, Junjie Xie, Dongfeng Cheng, Zhiwei Xu, Jun Zhang, Jiancheng Wang, XiaXing Deng, Hao Chen, Chenghong Peng, Hongwei Li, Henghui Zhang, Hai Fang, Chaofu Wang, [Baiyong Shen](mailto:shenby@shsmu.edu.cn) 
+ | Qian Zhan, Chenlei Wen, Yi Zhao, Lu Fang, Yangbing Jin, Zehui Zhang, Siyi Zou, Fanlu Li, Ying Yang, Lijia Wu, Jiabin Jin, Xiongxiong Lu, Junjie Xie, Dongfeng Cheng, Zhiwei Xu, Jun Zhang, Jiancheng Wang, XiaXing Deng, Hao Chen, Chenghong Peng, Hongwei Li, [Henghui Zhang](mailto:zhang.henghui@genecast.com.cn), [Hai Fang](mailto:fh12355@rjh.com.cn), [Chaofu Wang](mailto:wcf11956@rjh.com.cn), [Baiyong Shen](mailto:shenby@shsmu.edu.cn)
  | 
- | Department of General Surgery, Pancreatic Disease Center, Research Institute of Pancreatic Diseases, Ruijin Hospital, Shanghai Jiao Tong University School of Medicine, 197 Ruijin Er Road, Shanghai, 200025, China
+ | Department of General Surgery, Pancreatic Disease Center, Research Institute of Pancreatic Diseases, Ruijin Hospital, Shanghai Jiao Tong University School of Medicine, Shanghai, China
 date: "`r Sys.Date()`"
 vignette: >
  %\VignetteIndexEntry{PAAD Booklet}
