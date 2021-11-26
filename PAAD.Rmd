@@ -10,7 +10,6 @@ author: |
  | Genecast Biotechnology Co., Ltd, Wuxi, China.
  | Shanghai Institute of Hematology, State Key Laboratory of Medical Genomics, National Research Center for Translational Medicine (Shanghai), Ruijin Hospital, Shanghai Jiao Tong University School of Medicine, Shanghai, China.
  | Department of Pathology, Ruijin Hospital, Shanghai Jiao Tong University School of Medicine, Shanghai, China.
-date: "`r Sys.Date()`"
 vignette: >
  %\VignetteIndexEntry{PAAD Booklet}
  %\VignetteEngine{knitr::rmarkdown}
